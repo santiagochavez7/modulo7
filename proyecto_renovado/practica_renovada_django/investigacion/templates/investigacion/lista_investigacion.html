@@ -1,0 +1,29 @@
+{% extends 'investigacion/principal.html' %}
+
+
+{% block content %}
+
+<div class="container">
+    <h2>Lista de Laboratorios</h2>
+    <table class="table">
+        <thead>
+            <tr>
+                <th>Nombre</th>
+                <th>Acciones</th>
+            </tr>
+        </thead>
+        <tbody>
+            {% for item in items %}
+            <tr>
+                <td>{{ item.nombre }}</td>
+                <td>
+                    <a href="{% url 'formulario_investigacion' item.id %}" class="btn btn-primary">Editar</a>
+                    <a href="{% url 'confirmacion_eliminar' item.id %}" class="btn btn-danger">Eliminar</a>
+                </td>
+            </tr>
+            {% endfor %}
+        </tbody>
+    </table>
+</div>
+
+{% endblock %}

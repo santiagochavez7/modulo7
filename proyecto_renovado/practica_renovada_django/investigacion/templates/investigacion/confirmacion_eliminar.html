@@ -1,0 +1,16 @@
+{% extends 'principal.html' %}
+
+{% block content %}
+
+<div class="container">
+    <div class="py-5 text-center">
+        <h2>¿Estás seguro de que deseas eliminar este elemento?</h2>
+        <form method="post">
+            {% csrf_token %}
+            <input type="submit" value="Confirmar" class="btn btn-danger">
+        </form>
+        <a href="{% url 'lista_investigacion' %}" class="btn btn-primary mt-3">Cancelar y volver</a>
+    </div>
+</div>
+
+{% endblock %}

@@ -37,7 +37,8 @@ INSTALLED_APPS = [
     'django.contrib.sessions',
     'django.contrib.messages',
     'django.contrib.staticfiles',
-    'investigacion',
+    # otras apps
+    'investigacion',  # tu app personalizada
 ]
 
 MIDDLEWARE = [
@@ -53,10 +54,11 @@ MIDDLEWARE = [
 ROOT_URLCONF = 'config.enlaces'
 
 
+
 TEMPLATES = [
     {
         'BACKEND': 'django.template.backends.django.DjangoTemplates',
-        'DIRS': [os.path.join(BASE_DIR, 'investigacion', 'templates')],
+        'DIRS': [BASE_DIR / 'investigacion' / 'templates'],
         'APP_DIRS': True,
         'OPTIONS': {
             'context_processors': [
